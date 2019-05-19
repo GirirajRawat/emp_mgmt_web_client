@@ -5,19 +5,19 @@
     <title>Employee Management Web Client</title>
 </head>
 <body>
-        <form action=>
+       
                 <div class="imgcontainer">
                         <h1>LOGIN FORM</h1>
                       </div>
               
                 <div class="container">
                   <label for="uname"><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" required>
+                  <input id='username' type="text" placeholder="Enter Username" name="uname" required>
               
                   <label for="psw"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" required>
+                  <input id = 'password' type="password" placeholder="Enter Password" name="psw" required>
               
-                  <button type="submit">Login</button>
+                  <button id = 'login' type="submit">Login</button>
                   <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
                   </label>
@@ -27,8 +27,28 @@
                   <button type="button" class="cancelbtn">Cancel</button>
                   <span class="psw">Forgot <a href="#">password?</a></span>
                 </div>
-              </form>
+           
+           
           
-    
+    <script type='text/javascript' src='index.js'>
+
+       const button = document.getElementById('login');
+        button.addEventListener('click', function onClick(e){
+          //this is ihe function that is going to be  used
+           const usernameNode = document.getElementById('username');
+           const passwordNode = document.getElementById('password');
+
+           const usernameValue = usernameNode.value;
+           const passwordValue = passwordNode.value;
+
+           console.log(usernameValue,passwordValue);
+           /*retrieve password
+           retrieve username
+           send a request to express server(fetch/axois)
+           validate the user
+           finally send the user to dashboard
+           getElementById(html node lai access garna dinxa)*/
+        })
+    </script>
 </body>
 </html>
